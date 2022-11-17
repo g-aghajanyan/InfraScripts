@@ -67,7 +67,9 @@ Set-Alias -Name vim -Value 'C:\Program Files (x86)\vim\vim80\vim.exe'
 
 
 # PSReadLine
-Import-Module PSReadLine
+if (!(Get-Module PSReadLine)) {
+    Import-Module PSReadLine
+}
 
 # History
 Set-PSReadLineOption -HistoryNoDuplicates
